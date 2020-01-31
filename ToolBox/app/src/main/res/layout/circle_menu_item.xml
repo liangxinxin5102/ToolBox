@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--布局控件线性布局 -->
+<!--layout_width布局宽\layout_height布局高-wrap_content自适应-->
+<!--gravity布局内部控件位置-center中间位置-->
+<!--orientation线性布局方式vertical横向布局-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+    <!--圆盘菜单图标-->
+    <!--visibility控件隐藏还是显示-gone隐藏控件-->
+    <ImageView
+        android:id="@+id/id_circle_menu_item_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
+    <!--圆盘菜单文字-->
+    <!--textColor文字颜色-@android:color/white系统白色-->
+    <!--textSize文字大小-->
+    <TextView
+        android:id="@+id/id_circle_menu_item_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/white"
+        android:textSize="14.0dip"
+        android:visibility="gone" />
+</LinearLayout>

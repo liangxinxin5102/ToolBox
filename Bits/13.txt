@@ -1,0 +1,7 @@
+   // 剩余电量显示textview
+   private TextView batterytv;
+   // 不同电量显示图片数组
+   private int[] batterystatusimgs = {R.drawable.battery1,
+           R.drawable.battery2, R.drawable.battery3};
+   //电量多少切换图片的标准数组
+   private int[] batterystatuspercent = {75, 30, 0};

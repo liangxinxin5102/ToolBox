@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--布局控件线性布局 --><!--layout_width布局宽\layout_height布局高-match_parent布局占满全部容器-->
+<!--gravity布局内部控件位置-center_vertical横向中间位置-->
+<!--orientation线性布局方式vertical横向布局-->
+<!--background设置背景图片-@drawable/bg图片位置drawwable文件夹下的名称为bg的图片-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+    <!--布局控件相对布局 -->
+    <!--layout_width布局宽\layout_height布局高-match_parent布局占满全部容器-->
+    <!--id为控件赋予名称方便代码中调用-->
+    <!--background设置背景颜色-#0000透明-->
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#0000">
+        <!--按钮控件显示返回按钮-->
+        <!--layout_alignParentLeft设置控件是否靠近左侧true确认-->
+        <!--layout_margin外边距离负控件的距离-->
+        <!--onClick为控件添加点击事件-onDC在代码中可以重写onBack方法添加点击事件-->
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/back_bg"
+            android:onClick="onBack" />
+        <!--标题栏文字-->
+        <!--textColor文字颜色-@color/top_title_text调用res/values文件夹下color.xml文件top_title_text色值-->
+        <!--textSize文字大小-->
+        <!--layout_centerHorizontal设置控件在父容器的竖向中间位置-->
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:text="关于我们"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <ImageView
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="40dp"
+        android:background="@drawable/mingri_icon" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="QQ"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="          4006751066"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="电话"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        0431-84978981"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text="邮箱"
+            android:textColor="@android:color/white" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        mingrisoft@mingrisoft.com"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="copyright吉林省明日科技有限公司版权所有"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>

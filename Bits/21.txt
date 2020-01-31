@@ -1,0 +1,6 @@
+         /**
+          * 进入放大镜页面
+          */
+         Intent intent = new Intent(MainActivity.this,
+                 CamerActivity.class);
+         startActivity(intent);

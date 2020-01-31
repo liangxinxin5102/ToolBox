@@ -1,0 +1,8 @@
+if (pos == 2) {											//下标为2的按钮点击事件
+    /**
+     * 进入分贝测试页面
+     */
+    Intent intent = new Intent(MainActivity.this,
+            MicDemoActivity.class);
+    startActivity(intent);
+}

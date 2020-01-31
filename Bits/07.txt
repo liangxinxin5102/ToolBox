@@ -1,0 +1,9 @@
+@Override
+public void onSensorChanged(SensorEvent sensorEvent) {
+
+}
+
+@Override
+public void onAccuracyChanged(Sensor sensor, int i) {
+
+}

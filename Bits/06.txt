@@ -1,0 +1,7 @@
+    image_znz = (ImageView) findViewById(R.id.iv_znz);//指南针图片
+    // 获取真机的传感器管理服务
+    mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+    // 为系统的方向传感器注册监听器
+    mSensorManager.registerListener(this,
+            mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+            SensorManager.SENSOR_DELAY_GAME);

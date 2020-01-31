@@ -1,0 +1,28 @@
+protected void drawVerticalLine(Canvas canvas) {				//绘制辅助红线
+    Paint mPaint = new Paint();
+    mPaint.setColor(Color.RED);								//红色画笔
+    mPaint.setStyle(Style.STROKE);								// 画笔样式
+    mPaint.setStrokeWidth(2);									// 画笔宽度
+    canvas.drawLine(0, touchPoint.y, wdth, touchPoint.y,
+            mPaint);											//绘制辅助线
+}
+public boolean onTouchEvent(MotionEvent event) {				//触摸控制改变辅助线位置
+    switch (event.getAction() & MotionEvent.ACTION_MASK) {
+        // 手指按下
+        case MotionEvent.ACTION_DOWN:
+            touchPoint.set(event.getX(), event.getY());			//设置手指按下坐标
+            invalidate();										//重新绘制
+            break;
+        // 手指移动
+        case MotionEvent.ACTION_MOVE:
+            touchPoint.set(event.getX(), event.getY());			//设置手指移动坐标
+            invalidate();										//重新绘制
+            break;
+       // 手指抬起
+        case MotionEvent.ACTION_UP:
+            touchPoint.set(event.getX(), event.getY());			//设置手指抬起坐标
+            invalidate();										//重新绘制
+            break;
+    }
+    return true;
+}

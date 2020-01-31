@@ -1,0 +1,6 @@
+  // 定义显示指南针图片的控件
+  private ImageView image_znz;
+  // 记录指南针图片转过的角度
+  private float angle = 0f;
+  // 定义真机传感器管理器
+  private SensorManager mSensorManager;

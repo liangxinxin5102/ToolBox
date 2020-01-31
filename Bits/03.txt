@@ -1,0 +1,70 @@
+package com.mingrisoft.toolbox;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import com.mingrisoft.toolbox.view.CircleMenuLayout;
+import com.mingrisoft.toolbox.view.CircleMenuLayout.OnMenuItemClickListener;
+
+public class MainActivity extends Activity {
+    private CircleMenuLayout mCircleMenuLayout;//自定义圆盘菜单
+    private String[] mItemTexts = new String[]{"放大镜 ", "工具尺", "分贝测试仪", "手电筒",
+            "计算器", "SOS"};//圆盘菜单显示文字
+    private int[] mItemImgs = new int[]{R.drawable.home_mbank_1_normal,
+            R.drawable.home_mbank_2_normal, R.drawable.home_mbank_3_normal,
+            R.drawable.home_mbank_4_normal, R.drawable.home_mbank_5_normal,
+            R.drawable.home_mbank_6_normal};//圆盘菜单显示图片
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);//导入布局
+        //初始化圆盘控件
+        mCircleMenuLayout = (CircleMenuLayout) findViewById(R.id.id_menulayout);
+        //初始化圆盘控件菜单
+        mCircleMenuLayout.setMenuItemIconsAndTexts(mItemImgs, mItemTexts);
+        //自定义控件点击事件
+        mCircleMenuLayout
+                .setOnMenuItemClickListener(new OnMenuItemClickListener() {
+                    @Override
+                    public void itemClick(View view, int pos) {
+                        if (pos == 0) {                        //下标为0的按钮单击事件
+                           Toast.makeText(getApplicationContext(), "点击菜单按钮0执行方法",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        if (pos == 1) {                        //下标为1的按钮单击事件
+                           Toast.makeText(getApplicationContext(), "点击菜单按钮1执行方法",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                        if (pos == 2) {                        //下标为2的按钮单击事件
+                           Toast.makeText(getApplicationContext(), "点击菜单按钮2执行方法",
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (pos == 3) {                        //下标为3的按钮单击事件
+                           Toast.makeText(getApplicationContext(), "点击菜单按钮3执行方法",
+                                   Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (pos == 4) {                       //下标为4的按钮单击事件
+                           Toast.makeText(getApplicationContext(), "点击菜单按钮4执行方法",
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+                        if (pos == 5) {                      //下标为5的按钮单击事件
+                          Toast.makeText(getApplicationContext(), "点击菜单按钮5执行方法",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    //圆盘中间单击事件
+                    public void itemCenterClick(View view) {
+                        Toast.makeText(getApplicationContext(), "单击中心按钮执行方法",
+                                Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+    }
+}

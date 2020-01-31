@@ -1,0 +1,10 @@
+/**
+ * 生命周期应用暂停当前Activity的时候调用
+ */
+@Override
+protected void onPause() {
+    // TODO Auto-generated method stub
+    super.onPause();
+    // 取消注册
+    mSensorManager.unregisterListener(this);
+}

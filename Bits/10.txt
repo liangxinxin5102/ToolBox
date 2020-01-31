@@ -1,0 +1,12 @@
+/**
+ * 生命周期页面开始时候运行
+ */
+@Override
+protected void onRestart() {
+    // TODO Auto-generated method stub
+    super.onRestart();
+    // 为系统的方向传感器注册监听器
+    mSensorManager.registerListener(this,
+            mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+            SensorManager.SENSOR_DELAY_GAME);
+}

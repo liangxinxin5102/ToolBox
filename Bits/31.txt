@@ -1,0 +1,14 @@
+private TextView tView1;									// 用于显示分贝值
+private MHandler mHandler = new MHandler();				// 接收消息修改分贝值
+class MHandler extends Handler {							// 接收消息修改布局
+   @Override
+   public void handleMessage(Message msg) {
+      // TODO Auto-generated method stub
+      super.handleMessage(msg);
+      switch (msg.what) {
+      case 1:												// 返回消息1
+         tView1.setText(msg.obj.toString());				// 修改分贝值
+         break;
+      }
+   }
+}

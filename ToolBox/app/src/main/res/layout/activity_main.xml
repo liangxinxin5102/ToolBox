@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--布局控件线性布局 -->
+<!--layout_width布局宽\layout_height布局高-match_parent布局占满全部容器-->
+<!--gravity布局内部控件位置-center_vertical横向中间位置-->
+<!--orientation线性布局方式vertical横向布局-->
+<!--background设置背景图片-@drawable/bg图片位置drawwable文件夹下的名称为bg的图片-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+    <!--电量信息布局-->
+    <!--gravity布局内部控件位置-center_vertical中间位置-->
+    <!--onClick为控件添加点击事件-onDC在代码中可以重写onDC方法添加点击事件-->
+    <!--orientation线性布局方式horizontal纵向布局-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:onClick="onDC"
+        android:orientation="horizontal">
+        <!--显示当前电量信息-->
+        <!--id为控件赋予名称方便代码中调用-->
+        <!--text为控件设置文字-->
+        <!--textColor文字颜色-#000000黑色-->
+        <!--textSize文字大小-->
+        <TextView
+            android:id="@+id/batterytv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="35%"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <!--自定义圆盘菜单-->
+    <!--padding设置容器内部空间距离布局的距离-->
+    <com.mingrisoft.toolbox.view.CircleMenuLayout
+        android:id="@+id/id_menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/circle_bg3"
+        android:padding="100dp">
+        <!--圆盘中间位置布局-->
+        <RelativeLayout
+            android:id="@+id/id_circle_menu_item_center"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <!--指南针图片-->
+            <!--layout_centerInParent设置控件在RelativeLayout布局中的至于父控件水平方向与垂直方向位置-true为确认-->
+            <ImageView
+                android:id="@+id/iv_znz"
+                android:layout_width="104.0dip"
+                android:layout_height="104.0dip"
+                android:layout_centerInParent="true"
+                android:background="@drawable/znz" />
+            <!--指南针外框-->
+            <ImageView
+                android:layout_width="116.0dip"
+                android:layout_height="116.0dip"
+                android:layout_centerInParent="true"
+                android:background="@drawable/turnplate_mask_unlogin_normal" />
+        </RelativeLayout>
+    </com.mingrisoft.toolbox.view.CircleMenuLayout>
+</LinearLayout>

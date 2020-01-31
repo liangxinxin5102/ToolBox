@@ -1,0 +1,45 @@
+     mSeekBar = (SeekBar) findViewById(R.id.seekBar);			//初始化seekbar
+
+    // seekBar改变监听
+     mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        /**
+         * 停止拖动时触发操作
+         * @param seekBar
+         *            触发操作的SeekBar控件对象
+         */
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+           // TODO Auto-generated method stub
+           parameters.setZoom(value);							// 设置放大倍数
+           mCamera.setParameters(parameters);					// 设置参数
+           mCamera.startPreview();								// 开启相机预览
+        }
+
+        /**
+         * 开始拖动时触发方法
+         *
+         * @param seekBar
+         *            触发操作的SeekBar控件对象
+         */
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+           // TODO Auto-generated method stub
+        }
+
+        /**
+         * 改变中触发
+         *
+         * @param seekBar
+         *            触发操作的SeekBar控件对象
+         * @param progress
+         *            当前进入值
+         * @param fromUser
+         *            是否为用户自己触发
+         *
+         */
+        public void onProgressChanged(SeekBar seekBar, int progress,
+                               boolean fromUser) {
+           // TODO Auto-generated method stub
+           value = progress + 50;                     			// 放大倍数
+        }
+     });

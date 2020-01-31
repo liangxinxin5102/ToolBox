@@ -1,0 +1,6 @@
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);				//导入布局
+    powerled = new PowerLED(this);							//初始化闪光灯
+    image_znz = (ImageView) findViewById(R.id.iv_znz);		//指南针图片

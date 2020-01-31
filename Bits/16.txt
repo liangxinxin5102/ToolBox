@@ -1,0 +1,9 @@
+/**
+ * 电池信息
+ */
+public void onDC(View v) {
+    ElectricityBR receiver = new ElectricityBR();				//接受电量信息
+    IntentFilter filter = new IntentFilter(
+            Intent.ACTION_BATTERY_CHANGED);						//声明电量信息接收者
+    MainActivity.this.registerReceiver(receiver, filter);		//注册广播
+}

@@ -1,0 +1,3 @@
+//是否开启手电筒判断标示 默认关闭
+private boolean status = false;
+private PowerLED powerled;//闪光灯控制

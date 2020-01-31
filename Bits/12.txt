@@ -1,0 +1,24 @@
+<!--电量信息布局-->
+<!--gravity布局内部控件位置-center_vertical中间位置-->
+<!--onClick为控件添加点击事件-onDC在代码中可以重写onDC方法添加单击事件-->
+<!--orientation线性布局方式horizontal纵向布局-->
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:onClick="onDC"
+    android:orientation="horizontal">
+    <!--显示当前电量信息-->
+    <!--id为控件赋予名称方便代码中调用-->
+    <!--text为控件设置文字-->
+    <!--textColor文字颜色-#000000黑色-->
+    <!--textSize文字大小-->
+    <TextView
+        android:id="@+id/batterytv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="35%"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+</LinearLayout>

@@ -1,0 +1,16 @@
+ // 如果真机上触发event的传感器类型为水平传感器类型
+ if (event.sensor.getType() == Sensor.TYPE_ORIENTATION) {
+     // 获取绕Z轴转过的角度
+     float Zangle = event.values[0];
+     // 创建旋转动画（反向转过Zangle度）
+     RotateAnimation ra = new RotateAnimation(angle, -Zangle,
+             Animation.RELATIVE_TO_SELF, 0.5f,
+             Animation.RELATIVE_TO_SELF, 0.5f);
+     // 设置动画的持续时间
+     ra.setDuration(200);
+     // 设置动画结束后的保留状态
+     ra.setFillAfter(true);
+     // 启动动画
+     image_znz.startAnimation(ra);
+     angle = -Zangle;
+ }

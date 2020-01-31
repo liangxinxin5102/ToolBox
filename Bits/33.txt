@@ -1,0 +1,23 @@
+class MicrophoneThread extends Thread {//测量当前分贝值通知UI修改
+   final float minAngle = (float) Math.PI * 4 / 11;
+   float angle;//分贝值
+   @Override
+   public void run() {
+      while (istrue) {
+         angle = 100 * minAngle * mARecorder.getMaxAmplitude() / 32768;
+         if (angle > 100) {
+            angle = 100;
+         }
+         // 构造方法的字符格式这里如果小数不足2位,会以0补足
+         DecimalFormat decimalFormat = new DecimalFormat("0.00");
+         String p = decimalFormat.format(angle);			//format 返回的是字符串 分贝值
+         mHandler.sendMessage(mHandler.obtainMessage(1, p));	//发送当前分贝值
+         try {
+            Thread.sleep(1000);                               	//使当前线程暂停1秒
+         } catch (InterruptedException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+         }
+      }
+   }
+}

@@ -1,0 +1,11 @@
+private void init() {
+   tView1 = (TextView) findViewById(R.id.textView1);				//初始化显示分贝值的控件
+   //初始化左侧动态动画控件
+   iv_record_wave_left = (ImageView) findViewById(R.id.iv_record_wave_left);
+   //初始化右侧动态动画控件
+   iv_record_wave_right = (ImageView) findViewById(R.id.iv_record_wave_right);
+   ad_left = (AnimationDrawable) iv_record_wave_left.getBackground();	//动画效果
+   ad_right = (AnimationDrawable) iv_record_wave_right.getBackground();	//动画效果
+   ad_left.start();													//开启左侧动画
+   ad_right.start();													//开启右侧动画
+}

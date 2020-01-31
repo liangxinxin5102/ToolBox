@@ -1,0 +1,5 @@
+    <activity
+        android:name="com.mingrisoft.toolbox.CamerActivity"
+        android:screenOrientation="portrait"
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+    </activity>

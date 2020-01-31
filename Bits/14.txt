@@ -1,0 +1,4 @@
+ batterytv = (TextView) findViewById(R.id.batterytv);			//电池信息显示
+ // 电池电量监听显示注册广播接收器
+ registerReceiver(mBatInfoReceiver, new IntentFilter(
+         Intent.ACTION_BATTERY_CHANGED));

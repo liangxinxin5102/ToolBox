@@ -1,0 +1,35 @@
+protected void onDraw(Canvas canvas) {
+    // TODO Auto-generated method stub
+    super.onDraw(canvas);
+    Paint paint = new Paint();									// 画笔
+    paint.setColor(Color.WHITE);								// 画笔颜色
+    paint.setStyle(Style.STROKE);								// 画笔样式
+    paint.setStrokeWidth(2);									// 画笔宽度
+    paint.setTextSize(30);									// 画笔文字大小
+    canvas.save();											//保存信息
+    canvas.rotate(angle_rotate, mid_point.x, mid_point.y);		//确定尺子中心
+    // 绘制矩形
+    canvas.drawRect(mid_point.x - ruler_length / 2, mid_point.y,
+            mid_point.x + ruler_length / 2, mid_point.y + ruler_width,
+            paint);
+    // 画刻度线和刻度值
+    for (int i = 0; i < ruler_length / xmm; i++) {
+        float Left = mid_point.x - ruler_length / 2;
+        if (i % 10 == 0 && i != 0) {
+            canvas.drawLine(Left + i * xmm, mid_point.y, Left + i * xmm,
+                    mid_point.y + 50, paint);					//绘制尺子长线
+            canvas.drawText(Integer.toString(i / 10), Left + i * xmm,
+                    mid_point.y + 55, paint);					//绘制尺子可读值
+        } else if (i == 0) {
+            canvas.drawLine(Left + i * xmm, mid_point.y, Left + i * xmm,
+                    mid_point.y + 50, paint);					//绘制尺子0位置的线
+            canvas.drawText(Integer.toString(i / 5) + "cm", Left + i * xmm,
+                    mid_point.y + 55, paint);					//绘制尺子0刻度的数字
+        } else {
+            canvas.drawLine(Left + i * xmm, mid_point.y, Left + i * xmm,
+                    mid_point.y + 30, paint);					//绘制尺子短线
+        }
+    }
+    canvas.restore();								//可以取出画笔状态改变再次绘制的时候不影响
+    drawVerticalLine(canvas);						//绘制辅助红线
+}

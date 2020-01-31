@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/rl"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="#0000">
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_alignParentLeft="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/back_bg"
+            android:onClick="onBack" />
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:gravity="center_vertical"
+            android:text="放大镜"
+            android:textColor="@android:color/white"
+            android:textSize="20dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!--相机预览控件-->
+        <SurfaceView
+            android:id="@+id/surfaceView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible" />
+        <!--放大镜页面背景-->
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/camera_background">
+            <!--减少放大倍数图标-->
+            <ImageView
+                android:id="@+id/delete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="50dip"
+                android:paddingLeft="30dip"
+                android:src="@drawable/delete" />
+            <!--增加放大倍数图标-->
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="50dip"
+                android:paddingLeft="200dip"
+                android:src="@drawable/add" />
+            <!--放大倍数控制-->
+            <!--max为定义seekbar的0到max设置的值该项目为0-20-->
+            <!--progress设置初始进度值-->
+            <!--paddingBottom控件下边界距离下边控件的距离-->
+            <!--paddingLeft控件左边界距离左边的距离-->
+            <SeekBar
+                android:id="@+id/seekBar"
+                android:layout_width="230dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:max="20"
+                android:paddingBottom="20dip"
+                android:paddingLeft="30dip"
+                android:progress="1"
+                android:progressDrawable="@drawable/seekbar_style" />
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

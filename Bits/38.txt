@@ -1,0 +1,22 @@
+/**
+ * 电池信息
+ */
+public void onDC(View v) {
+    ElectricityBR receiver = new ElectricityBR();				//接收电量信息
+    IntentFilter filter = new IntentFilter(
+            Intent.ACTION_BATTERY_CHANGED);						//声明电量信息接收者
+    MainActivity.this.registerReceiver(receiver, filter);		//注册广播
+}
+/**
+ * 手电筒的开启关闭
+ */
+public void onFlashlight() {
+    powerled.turnOff();										// 关闭闪光灯
+    if (!status) {
+        status = true;
+        powerled.turnOn();										// 开启闪光灯
+    } else {
+        status = false;
+        powerled.turnOff();									// 关闭闪光灯
+    }
+}

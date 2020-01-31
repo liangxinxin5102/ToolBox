@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--布局控件相对布局 -->
+<!--layout_width布局宽\layout_height布局高-match_parent布局占满全部容器-->
+<!--id为控件赋予名称方便代码中调用-->
+<!--background设置背景图片-@drawable/bg图片位置drawwable文件夹下的名称为bg的图片-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/main_layout"
+    android:background="@drawable/bg"
+    >
+</RelativeLayout>

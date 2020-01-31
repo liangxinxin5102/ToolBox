@@ -1,0 +1,25 @@
+/**
+ * 生命周期页面开始时候运行
+ */
+@Override
+protected void onRestart() {
+    // TODO Auto-generated method stub
+    super.onRestart();
+    // 为系统的方向传感器注册监听器
+    mSensorManager.registerListener(this,
+            mSensorManager.getDefaultSensor(Sensor.TYPE_ORIENTATION),
+            SensorManager.SENSOR_DELAY_GAME);
+    powerled = new PowerLED(this);//初始化闪光灯
+}
+
+/**
+ * 生命周期应用暂停当前Activity的时候调用
+ */
+@Override
+protected void onPause() {
+    // TODO Auto-generated method stub
+    super.onPause();
+    // 取消注册
+    mSensorManager.unregisterListener(this);
+      powerled.Destroy();// 释放相机资源关闭闪光灯
+}

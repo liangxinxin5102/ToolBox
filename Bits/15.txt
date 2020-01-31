@@ -1,0 +1,30 @@
+/**
+ * 创建广播接收 电池电量信息
+ */
+private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
+    public void onReceive(Context context, Intent intent) {
+        String action = intent.getAction();
+        if (Intent.ACTION_BATTERY_CHANGED.equals(action)) {
+            int intLevel = intent.getIntExtra("level", 0);		//当前电量
+            int intScale = intent.getIntExtra("scale", 100);		//总电量
+            onBatteryInfoReceiver(intLevel, intScale);
+        }
+    }
+};
+
+/**
+ * 设置电量百分比，切换电池不同电量图片
+ */
+public void onBatteryInfoReceiver(int intLevel, int intScale) {
+    int bp = intLevel * 100 / intScale;
+    batterytv.setText(bp + "%");
+    if (bp >= batterystatuspercent[2]) {					 //电量大于0的时候设置电池背景
+        batterytv.setBackgroundResource(batterystatusimgs[2]);//设置电池红色背景
+    }
+    if (bp >= batterystatuspercent[1]) {					  //电量大于30%的时候设置电池背景
+        batterytv.setBackgroundResource(batterystatusimgs[1]);//设置电池黄色背景
+    }
+    if (bp >= batterystatuspercent[0]) {					//电量大于70%的时候设置电池背景
+        batterytv.setBackgroundResource(batterystatusimgs[0]);//设置电池绿色背景
+    }
+}

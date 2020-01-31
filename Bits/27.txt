@@ -1,0 +1,6 @@
+    /**
+     * 进入工具尺子页面
+     */
+    Intent intent = new Intent(MainActivity.this,
+            RuleActivity.class);
+    startActivity(intent);
